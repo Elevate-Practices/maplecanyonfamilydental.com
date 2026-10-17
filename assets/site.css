@@ -293,11 +293,11 @@ a.fact:hover { background: var(--tint); }
 .sitemap ul { columns: 2; }
 
 /* responsive */
-@media (max-width: 1240px) {
+@media (max-width: 1500px) {
   .tel span { display: none; }
   .nav { gap: 18px; }
 }
-@media (max-width: 1100px) {
+@media (max-width: 1280px) {
   .nav, .top-acts .tel, .top-acts .lang { display: none; }
   .menu { display: block; }
   .top-acts { margin-left: auto; }
