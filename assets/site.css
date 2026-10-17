@@ -1,7 +1,7 @@
 /* Maple Canyon Family Dental — "Canyon clean" (Oct 14 2026)
    Apple × Google: light-led, one idea per band. White + #EEF4F5 mist, #3A4448 text, #034657 primary (headlines, the only
    Book fill), #02323F deep for exactly two bands (membership, footer), #4DB6D1 accent only as small highlights on deep bands.
-   Raleway headlines, Open Sans body (brand guide). Split hero: copy left, tall rounded family photo right.
+   Raleway headlines, Open Sans body (brand guide). Split hero: copy left, wide rounded family photo right (50/50).
    Pill buttons, 24–28px radii, no borders, no ornaments. Solid white header. Started from an empty file. */
 :root {
   --primary: #034657; --deep: #02323F; --accent: #4DB6D1; --accent-ink: #2B788C; --tint: #CDEBF2; --mist: #EEF4F5;
@@ -72,15 +72,15 @@ p { margin: 0 0 16px; }
 
 /* hero: split, copy left, tall rounded family photo right */
 .hero { padding: 72px 0 88px; }
-.hero-in { display: grid; grid-template-columns: 1.08fr .92fr; gap: 72px; align-items: center; }
-.hero h1 { margin-bottom: 22px; }
+.hero-in { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.hero h1 { margin-bottom: 22px; font-size: clamp(2.5rem, 4.2vw, 4rem); }
 .hero-sub { font-size: clamp(1.15rem, 1.7vw, 1.35rem); line-height: 1.5; max-width: 34ch; margin-bottom: 32px; }
 .hero-acts { display: flex; flex-wrap: wrap; gap: 12px; }
 .hero-meta { display: inline-flex; align-items: center; gap: 10px; margin-top: 28px; color: var(--muted); font-size: .95rem; text-decoration: none; }
 .hero-meta:hover { color: var(--primary); }
 .r-stars { display: inline-flex; gap: 2px; }
 .hero-photo { margin: 0; border-radius: var(--r-lg); overflow: hidden; box-shadow: 0 30px 80px rgba(2, 50, 63, .16); }
-.hero-photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.hero-photo img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
 
 /* facts */
 .facts { padding: 0 0 24px; }
