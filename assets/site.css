@@ -368,3 +368,7 @@ a.fact:hover { background: var(--tint); }
   .dock .ic { width: 18px; height: 18px; }
   .dock .dock-book { background: var(--primary); color: #fff; }
 }
+
+/* hover pill on mega-menu links, Gunnell-style (Chris, Oct 19 2026) */
+.nav .mega-col > a:not(.btn):not(.link){padding:7px 10px;margin-inline:-10px;border-radius:8px;transition:background .15s,color .15s}
+.nav .mega-col > a:not(.btn):not(.link):hover,.nav .mega-col > a:not(.btn):not(.link)[aria-current]{background:var(--mist);color:var(--primary);text-decoration:none;opacity:1}
