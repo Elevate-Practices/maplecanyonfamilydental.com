@@ -53,15 +53,34 @@ p { margin: 0 0 16px; }
 .top-in { display: flex; align-items: center; gap: 28px; min-height: 76px; }
 .brand { flex: none; display: block; }
 .brand img { width: 150px; height: auto; }
-.nav { display: flex; gap: 22px; margin-left: auto; }
+.nav { display: flex; flex-wrap: nowrap; gap: 22px; margin-left: auto; }
 .nav a { font-size: .93rem; font-weight: 400; color: var(--text); text-decoration: none; white-space: nowrap; }
 .nav a:hover, .nav a[aria-current=page] { color: var(--primary); }
 .nav a[aria-current=page] { font-weight: 600; text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 8px; }
-.top-acts { display: flex; align-items: center; gap: 16px; }
+.top-acts { display: flex; align-items: center; gap: 16px; flex: none; }
+.top-acts .lang, .top-acts .btn { white-space: nowrap; }
 .lang { font-size: .9rem; color: var(--muted); text-decoration: none; }
 .tel { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; color: var(--primary); text-decoration: none; white-space: nowrap; }
 .tel .ic { width: 18px; height: 18px; }
 .top .btn { min-height: 44px; padding: 10px 20px; font-size: .95rem; }
+/* Services mega-menu (Chris, Oct 19 2026): opaque white panel under the header, one column per service group + a mist "Not sure?" card. Hover or keyboard focus. */
+.has-mega { position: static; }
+.has-mega > a { display: inline-flex; align-items: center; gap: 3px; }
+.has-mega > a .ic { width: 14px; height: 14px; opacity: .55; transition: transform .2s; }
+.mega { position: absolute; left: 0; right: 0; top: 100%; background: #fff; border-bottom: 1px solid var(--line); box-shadow: 0 28px 60px rgba(2, 50, 63, .14); opacity: 0; visibility: hidden; transform: translateY(-6px); transition: opacity .18s, transform .18s, visibility 0s .18s; }
+.has-mega:hover .mega, .has-mega:focus-within .mega { opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }
+.has-mega:hover > a .ic, .has-mega:focus-within > a .ic { transform: rotate(180deg); }
+.mega-in { display: grid; grid-template-columns: 1fr 1fr 1fr 1.15fr; gap: 40px; padding: 32px 0 36px; }
+.mega-col { display: grid; align-content: start; gap: 4px; }
+.nav .mega-h { display: flex; align-items: center; gap: 12px; margin: 0 0 10px; font-family: var(--display); font-weight: 700; font-size: 1rem; color: var(--primary); }
+.mega-h .sv-ic { width: 40px; height: 40px; border-radius: 12px; background: var(--mist); }
+.nav .mega-col > a:not(.btn):not(.link) { font-size: .93rem; font-weight: 400; color: var(--text); padding: 5px 0; text-decoration: none; }
+.nav .mega-col > a:not(.btn):not(.link):hover, .nav .mega-col > a[aria-current=page] { color: var(--primary); font-weight: 600; text-decoration: none; }
+.mega-all { background: var(--mist); border-radius: var(--r); padding: 24px; gap: 12px; }
+.mega-all .mega-h { margin: 0; }
+.mega-p { margin: 0; font-size: .93rem; color: var(--muted); }
+.nav .mega .btn, .nav .mega .btn:hover { color: #fff; opacity: 1; font-size: .95rem; font-weight: 700; justify-self: start; }   /* .nav a would otherwise restyle the button */
+.nav .mega .link, .nav .mega .link:hover { color: var(--accent-ink); font-weight: 700; font-size: .93rem; }
 .menu { display: none; position: relative; }
 .menu summary { list-style: none; cursor: pointer; width: 44px; height: 44px; display: grid; place-content: center; gap: 5px; border-radius: 12px; }
 .menu summary::-webkit-details-marker { display: none; }
