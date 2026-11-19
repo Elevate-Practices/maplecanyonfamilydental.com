@@ -372,3 +372,5 @@ a.fact:hover { background: var(--tint); }
 /* hover pill on mega-menu links, Gunnell-style (Chris, Oct 19 2026) */
 .nav .mega-col > a:not(.btn):not(.link){padding:7px 10px;margin-inline:-10px;border-radius:8px;transition:background .15s,color .15s}
 .nav .mega-col > a:not(.btn):not(.link):hover,.nav .mega-col > a:not(.btn):not(.link)[aria-current]{background:var(--mist);color:var(--primary);text-decoration:none;opacity:1}
+.hours .hours-note { text-align: left; font-size: .85rem; font-style: italic; padding-top: 8px; }
+.hours-foot .hours-note { color: rgba(255,255,255,.65); }
