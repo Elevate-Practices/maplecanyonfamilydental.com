@@ -92,7 +92,7 @@ p { margin: 0 0 16px; }
 /* hero: full-width family photo (whole family in view at every width), headline left, buttons right */
 .hero { padding: 0 0 88px; }
 .hero-band { margin: 0; }
-.hero-band img { display: block; width: 100%; height: min(50vw, calc(100vh - 150px)); min-height: 340px; object-fit: cover; object-position: 50% 45%; }
+.hero-band img { display: block; width: 100%; height: min(50vw, calc(100vh - 240px)); min-height: 340px; object-fit: cover; object-position: 50% 45%; }
 .hero-in { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: end; padding-top: 56px; }
 .hero h1 { margin-bottom: 0; font-size: clamp(2.5rem, 4.2vw, 4rem); }
 .hero-sub { font-size: clamp(1.15rem, 1.7vw, 1.35rem); line-height: 1.5; max-width: 34ch; margin-bottom: 28px; }
