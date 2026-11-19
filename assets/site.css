@@ -92,7 +92,10 @@ p { margin: 0 0 16px; }
 /* hero: copy left (one third), whole family photo right (two thirds), nothing cropped (Chris, Nov 19 2026) */
 .hero { padding: 56px 0 88px; }
 .hero-in { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 48px; align-items: center; }
-.hero h1 { margin-bottom: 20px; font-size: clamp(2.2rem, 3.1vw, 3.3rem); text-wrap: balance; }
+.hero-copy { min-width: 0; container-type: inline-size; }
+/* headline sizes to its own column so "Mapleton, Utah." never runs under the photo */
+.hero h1 { margin-bottom: 20px; font-size: clamp(2rem, 2.6vw, 3rem); font-size: clamp(2rem, 11cqi, 3rem); text-wrap: balance; }
+.hero-photo { min-width: 0; }
 .hero-sub { font-size: clamp(1.05rem, 1.35vw, 1.25rem); line-height: 1.5; max-width: 34ch; margin-bottom: 28px; }
 .hero-acts { display: flex; flex-wrap: wrap; gap: 12px; }
 .hero-meta { display: inline-flex; align-items: center; gap: 10px; margin-top: 24px; color: var(--muted); font-size: .95rem; text-decoration: none; }
