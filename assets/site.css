@@ -1,7 +1,7 @@
 /* Maple Canyon Family Dental — "Canyon clean" (Oct 14 2026)
    Apple × Google: light-led, one idea per band. White + #EEF4F5 mist, #3A4448 text, #034657 primary (headlines, the only
    Book fill), #02323F deep for exactly two bands (membership, footer), #4DB6D1 accent only as small highlights on deep bands.
-   Raleway headlines, Open Sans body (brand guide). Hero: full-width family photo, headline and buttons under it.
+   Raleway headlines, Open Sans body (brand guide). Hero: copy left, whole family photo right at two thirds of the width.
    Pill buttons, 24–28px radii, no borders, no ornaments. Solid white header. Started from an empty file. */
 :root {
   --primary: #034657; --deep: #02323F; --accent: #4DB6D1; --accent-ink: #2B788C; --tint: #CDEBF2; --mist: #EEF4F5;
@@ -89,16 +89,21 @@ p { margin: 0 0 16px; }
 .menu-panel a { padding: 12px 14px; border-radius: 12px; color: var(--text); text-decoration: none; font-weight: 600; }
 .menu-panel a:hover { background: var(--mist); }
 
-/* hero: full-width family photo (whole family in view at every width), headline left, buttons right */
-.hero { padding: 0 0 88px; }
-.hero-band { margin: 0; }
-.hero-band img { display: block; width: 100%; height: min(50vw, calc(100vh - 240px)); min-height: 340px; object-fit: cover; object-position: 50% 70%; }
-.hero-in { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: end; padding-top: 56px; }
-.hero h1 { margin-bottom: 0; font-size: clamp(2.5rem, 4.2vw, 4rem); }
-.hero-sub { font-size: clamp(1.15rem, 1.7vw, 1.35rem); line-height: 1.5; max-width: 34ch; margin-bottom: 28px; }
+/* hero: copy left (one third), whole family photo right (two thirds), nothing cropped (Chris, Nov 19 2026) */
+.hero { padding: 56px 0 88px; }
+.hero-in { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 48px; align-items: center; }
+.hero h1 { margin-bottom: 20px; font-size: clamp(2.2rem, 3.1vw, 3.3rem); }
+.hero-sub { font-size: clamp(1.05rem, 1.35vw, 1.25rem); line-height: 1.5; max-width: 34ch; margin-bottom: 28px; }
 .hero-acts { display: flex; flex-wrap: wrap; gap: 12px; }
-.hero-meta { display: inline-flex; align-items: center; gap: 10px; margin-top: 28px; color: var(--muted); font-size: .95rem; text-decoration: none; }
+.hero-meta { display: inline-flex; align-items: center; gap: 10px; margin-top: 24px; color: var(--muted); font-size: .95rem; text-decoration: none; }
 .hero-meta:hover { color: var(--primary); }
+.hero-photo { margin: 0; border-radius: var(--r-lg); overflow: hidden; box-shadow: 0 30px 80px rgba(2, 50, 63, .16); }
+.hero-photo img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; }
+@media (max-width: 1100px) {
+  .hero { padding: 0 0 64px; }
+  .hero-in { grid-template-columns: 1fr; gap: 28px; }
+  .hero-photo { order: -1; margin: 0 -24px; border-radius: 0; box-shadow: none; }
+}
 .r-stars { display: inline-flex; gap: 2px; }
 
 /* facts */
@@ -327,8 +332,6 @@ a.fact:hover { background: var(--tint); }
 }
 @media (max-width: 900px) {
   .hero { padding: 0 0 64px; }
-  .hero-band img { height: auto; min-height: 0; aspect-ratio: 4 / 3; object-position: 50% 50%; }
-  .hero-in { grid-template-columns: 1fr; gap: 20px; padding-top: 32px; }
   .facts-in, .prices, .prose .prices { grid-template-columns: 1fr 1fr; }
   .doc-in, .first-in, .hfaq-in, .visit-in, .mcard, .art, .bio, .revs-row, .appt-more, .phead-photo .phead-in { grid-template-columns: 1fr; }
   .grp-row, .quotes, .sv-grid, .posts { grid-template-columns: 1fr 1fr; }
@@ -343,6 +346,7 @@ a.fact:hover { background: var(--tint); }
 @media (max-width: 640px) {
   body { font-size: 16px; padding-bottom: 72px; }
   .wrap { width: min(var(--max), 100% - 32px); }
+  .hero-photo { margin: 0 -16px; }
   .top-in { min-height: 64px; gap: 12px; }
   .brand img { width: 118px; }
   .top .btn { padding: 8px 16px; min-height: 42px; font-size: .9rem; }
