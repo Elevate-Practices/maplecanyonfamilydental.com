@@ -91,7 +91,7 @@ p { margin: 0 0 16px; }
 
 /* hero: split, copy left, tall rounded family photo right */
 .hero { padding: 72px 0 88px; }
-.hero-in { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.hero-in { display: grid; grid-template-columns: 1fr 1.15fr; gap: 56px; align-items: center; }
 .hero h1 { margin-bottom: 22px; font-size: clamp(2.5rem, 4.2vw, 4rem); }
 .hero-sub { font-size: clamp(1.15rem, 1.7vw, 1.35rem); line-height: 1.5; max-width: 34ch; margin-bottom: 32px; }
 .hero-acts { display: flex; flex-wrap: wrap; gap: 12px; }
@@ -99,7 +99,7 @@ p { margin: 0 0 16px; }
 .hero-meta:hover { color: var(--primary); }
 .r-stars { display: inline-flex; gap: 2px; }
 .hero-photo { margin: 0; border-radius: var(--r-lg); overflow: hidden; box-shadow: 0 30px 80px rgba(2, 50, 63, .16); }
-.hero-photo img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+.hero-photo img { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; }
 
 /* facts */
 .facts { padding: 0 0 24px; }
@@ -374,3 +374,12 @@ a.fact:hover { background: var(--tint); }
 .nav .mega-col > a:not(.btn):not(.link):hover,.nav .mega-col > a:not(.btn):not(.link)[aria-current]{background:var(--mist);color:var(--primary);text-decoration:none;opacity:1}
 .hours .hours-note { text-align: left; font-size: .85rem; font-style: italic; padding-top: 8px; }
 .hours-foot .hours-note { color: rgba(255,255,255,.65); }
+/* Facebook and Instagram buttons (footer, contact page) */
+.social { display: flex; gap: 10px; margin: 16px 0 0; }
+.social a { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); color: var(--primary); transition: background .2s, color .2s, border-color .2s; }
+.social a:hover { background: var(--primary); border-color: var(--primary); color: #fff; }
+.social svg { width: 20px; height: 20px; }
+.social-dark { margin-top: 22px; }
+.social-dark a { border-color: rgba(255,255,255,.3); color: #fff; }
+.social-dark a:hover { background: #fff; border-color: #fff; color: var(--deep); }
+.follow-h { font-size: 1.1rem; margin: 24px 0 0; }
